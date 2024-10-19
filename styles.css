@@ -20,13 +20,15 @@
     padding: 0 20px;
     z-index: 1000;
     transition: background-color 0.3s ease;
-    background-color: #1c0078; /* Transparent initially */
+    background-color: #001F3F;
+  //opacity:56.4;
     margin: 0;
   }
   
-  .navbar.scrolled {
-    background-color: #1c0078; /* Solid background when scrolling */
-  }
+ 
+ .navbar.scrolled {
+  background-color: rgba(0,0,0,0.3); /* Solid background when scrolling */
+ }
   
   .logo img {
     height: 50px;
@@ -51,42 +53,89 @@
   }
   
   .nav-links a:hover {
-    color: #ff9800;
+    color: #001F3F;
   }
   
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 20px;
-    background-color: #1c0078; /* Matches navbar color when scrolling */
-    color: white;
-    min-height: 90vh;
-  }
-  
-  .hero-text {
-    flex: 1;
-  }
-  
-  .hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-text p {
-    font-size: 20px;
-    line-height: 1.5;
-  }
-  
-  .hero-image {
-    flex: 1;
-    text-align: right;
-  }
-  
-  .hero-image img {
+   /* Reset margin and padding for html and body to ensure full screen */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    /* Set the background image */
+    background-image: url('backgroundImg.jpg'); /* Replace with your image path */
+    
+    /* Ensure the background image covers the entire section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Set the section to be full-screen */
+    height: 100vh;
     width: 100%;
-    max-width: 500px;
-  }
+    
+    /* Use flexbox to center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Optional: Add an overlay effect to make text more readable */
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure it's behind the text */
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+    z-index: 2; /* Bring the text in front of the overlay */
+    font-size: 2.5rem;
+    padding: 20px;
+    animation: fadeIn 3s ease-in-out; /* Fade-in effect for the entire text */
+}
+
+h1 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds shadow for better readability */
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUp 3s ease-in-out; /* Slide-up effect for the heading */
+}
+
+/* Keyframe animation for sliding the heading up */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%); /* Start below the view */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Bring the text to its original position */
+        opacity: 1;
+    }
+}
+
+/* Keyframe animation for fading in the text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
   
   .content {
     padding: 20px;
@@ -95,15 +144,173 @@
   }
   
   /* Research Overview Section */
-  .research-overview {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    color: #010101;
-    text-align: left;
-    padding-bottom: 20px;
+  
+
+  /* CSS for Research Overview Section */
+.research-overview {
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background color for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
-  /* Section Title Styling */
+  .section-title {
+    text-align: center; /* Centering the title */
+    margin-bottom: 20px;
+  }
+  
+  .section-title h2 {
+    font-size: 2em; /* Large font size for the title */
+    color: #333; /* Dark text color */
+  }
+  
+  .section-title p {
+    font-size: 1.1em; /* Slightly larger font size for the subtitle */
+    color: #666; /* Gray color for subtitle */
+  }
+  
+  .research-content {
+    max-width: 800px; /* Limiting width for better readability */
+    margin: 0 auto; /* Centering content */
+    line-height: 1.6; /* Increased line height for readability */
+}
+
+.research-content p {
+    font-size: 1em; /* Standard font size for paragraph text */
+    color: #444; /* Darker text for paragraphs */
+    margin-bottom: 20px; /* Spacing between paragraphs */
+    text-align: justify; /* Justify the text */
+}
+
+/* CSS for Research Problem Section */
+/* General Styles for Research Item */
+.research-item {
+    padding: 30px; /* Padding around the research item */
+    margin-bottom: 30px; /* Space between research items */
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+    text-align: justify; /* Justify text */
+}
+
+/* Header styles for research problem */
+.research-item h3 {
+    font-size: 1.8em; /* Larger font size for main header */
+    color: #2c3e50; /* Darker text color */
+    margin-bottom: 15px; /* Space below the header */
+}
+
+/* Description paragraph for research problem */
+.research-item p {
+    font-size: 1.1em; /* Standard font size for description */
+    color: #34495e; /* Darker gray color */
+    line-height: 1.6; /* Line height for readability */
+    text-align: justify; /* Justify text */
+    margin-bottom: 20px; /* Spacing below the paragraph */
+    max-width: 800px; /* Limiting width for better readability */
+    margin-left: auto; /* Centering the paragraph */
+    margin-right: auto; /* Centering the paragraph */
+}
+
+/* Styles for subtopics */
+.subtopic {
+    padding: 20px; /* Inner padding for subtopics */
+    margin-top: 20px; /* Space above each subtopic */
+    border-left: 4px solid #3498db; /* Blue left border for distinction */
+    background-color: #f0faff; /* Light blue background for subtopics */
+    border-radius: 8px; /* Rounded corners for subtopics */
+    text-align: justify; /* Justify text */
+}
+
+/* Subtopic header styles */
+.subtopic h4 {
+    font-size: 1.5em; /* Slightly smaller than the main header */
+    color: #2980b9; /* Blue color for subtopic headers */
+    margin-bottom: 10px; /* Space below the subtopic header */
+    text-align: center; /* Centering subtopic headers */
+}
+
+/* Optional hover effect for subtopics */
+.subtopic:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    transition: box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.gaps {
+    display: flex;
+    justify-content: center; /* Centers the boxes */
+    margin-top: 10px;
+}
+
+.gap {
+    flex: 1; /* Allows the boxes to take equal space */
+    border: 3px solid #2980b9;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f0faff; /* Light blue background color */
+    margin: 0 10px; /* Adds space between boxes */
+    max-width: 280px; /* Set a max width for uniformity */
+}
+
+.gap h4 {
+    margin-top: 0;
+    color:  #2980b9;
+    text-align: center;
+}
+
+.gap p {
+    color: #666;
+}
+
+
+.lit {
+    text-align: center; /* Center the text in the section */
+    padding: 20px; /* Add padding for spacing */
+}
+
+.content-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Space between items to push the image down */
+    align-items: flex-start; /* Align items to the start (left) */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container */
+    height: 100%; /* Allow container to take full height */
+}
+
+.left-image {
+    width: 800px; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 5px; /* Space above the image */
+    margin-bottom: 5px; /* Space below the image */
+}
+
+.text-references {
+    display: flex;
+    flex-direction: column; /* Stack text and references vertically */
+    align-items: flex-start; /* Align text and references to the start (left) */
+    text-align: left; /* Align the text to the left */
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+
+.references {
+    font-size: 8px; /* Make the references smaller */
+    margin-top: 10px; /* Space above references */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+/* Section Title Styling */
   .section-title {
     text-align: center;
     margin-bottom: 40px;
@@ -148,13 +355,20 @@
     margin-bottom: 15px;
     text-align: center;
   }
+
+  .research-item h6 {
+    font-size: 18px;
+    color: #1c0078;
+    margin-bottom: 15px;
+    text-align: center;
+  }
   
   /* Research Item Description */
   .research-item p {
     font-size: 16px;
     color: #555;
     line-height: 1.6;
-    text-align: center;
+    text-align: justify;
   }
   
   /* Media Query for Mobile Devices */
@@ -359,7 +573,7 @@
   
   .document-card h3 {
     font-size: 22px;
-    color: #1c0078;
+    color: #001F3F;
     margin-bottom: 10px;
   }
   
@@ -372,7 +586,7 @@
   .document-card .download-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1c0078;
+    background-color: #001F3F;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -545,7 +759,7 @@
   /* Contact Us Section */
   .contact-us {
     padding: 60px 0;
-    background: linear-gradient(135deg, #1c0078, #ff9800);
+    background: linear-gradient(135deg, #001F3F, #003366, #4682B4);
     color: white;
     text-align: center;
     width: 100%;
@@ -652,7 +866,7 @@
   /* Footer Section */
   .contact-footer {
     padding: 60px 20px;
-    background-color: #1c0078;
+    background-color: #001F3F;
     color: white;
   }
   
@@ -673,7 +887,7 @@
   .contact-form h3 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #ff9800;
+    color:  #2980b9;
   }
   
   .form-group {
@@ -707,7 +921,7 @@
   }
   
   .submit-button {
-    background-color: #ff9800;
+    background-color:  #2980b9;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -730,7 +944,7 @@
   .contact-details h3 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #ff9800;
+    color:  #2980b9;
   }
   
   .contact-details p {
@@ -739,7 +953,7 @@
   }
   
   .contact-details a {
-    color: #ff9800;
+    color:  #2980b9;
     text-decoration: none;
     transition: color 0.3s ease;
   }
