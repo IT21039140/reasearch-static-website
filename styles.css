@@ -95,25 +95,25 @@ body {
 }
 
 .hero {
-  /* Set the background image */
-  background-image: url("backgroundImg.jpg"); /* Replace with your image path */
-
-  /* Ensure the background image covers the entire section */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Set the section to be full-screen */
-  height: 100vh;
-  width: 100%;
-
-  /* Use flexbox to center the text */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Optional: Add an overlay effect to make text more readable */
-  position: relative;
+    /* Set the background image */
+    background-image: url('Images/backgroundImg.jpg'); /* Replace with your image path */
+    
+    /* Ensure the background image covers the entire section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Set the section to be full-screen */
+    height: 100vh;
+    width: 100%;
+    
+    /* Use flexbox to center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Optional: Add an overlay effect to make text more readable */
+    position: relative;
 }
 
 .hero::before {
@@ -868,6 +868,13 @@ h1 {
     max-width: none;
     margin-bottom: 10px;
     font-size: 16px;
+    flex: 1;
+    color: #1c0078;
+    font-weight: bold;
+    position: relative;
+    padding-top: 20px;
+    text-align: center;//#2980b9
+    margin-left: 50px;
   }
 
   .timeline-content {
@@ -900,12 +907,250 @@ h1 {
 
   .website-card {
     flex-direction: column;
+
     text-align: center;
     padding: 20px;
   }
 
   .website-logo-container {
     margin-bottom: 20px;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .document-card h3 {
+    font-size: 22px;
+    color: #001F3F;
+    margin-bottom: 10px;
+  }
+  
+  .document-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .document-card .download-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #001F3F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .document-card .download-link:hover {
+    background-color: #ff9800;
+  }
+  
+  .document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Pending Document Styling */
+  .document-card.pending {
+    opacity: 0.7;
+  }
+  
+  .document-card.pending .download-link {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .document-card.pending .download-link:hover {
+    background-color: #cccccc;
+  }
+  
+  /* Responsive Layout for Mobile */
+  @media (max-width: 768px) {
+    .documents-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .document-card {
+      margin-bottom: 20px;
+    }
+  }
+
+
+ /* About Us Section */
+.about-us {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  color: #010101;
+  max-width: 1200px; /* Limit the max width of the content */
+  margin: 0 auto; /* Center the section on the page */
+}
+
+/* Section Title Styling */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  color: #1c0078;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Team Section Layout */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-content: center; /* Center grid items */
+  margin-bottom: 40px;
+}
+
+/* Team Card Styling */
+.team-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px; /* Ensure consistent card width */
+  margin: 0 auto; /* Center each card */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Card Image - Make it Square */
+.team-card img {
+  width: 150px; /* Set the width to 150px */
+  height: 150px; /* Set the height to 150px to make it square */
+ // border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure image fits within the square */
+  margin-bottom: 20px;
+  border: 1px solid #1c0078;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Team Card Text */
+.team-card h3 {
+  font-size: 22px;
+  color: #1c0078;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Contact section for email */
+.team-card .contact {
+  margin-top: 15px;
+}
+
+.team-card .contact a {
+  color: #1c0078;
+  text-decoration: none;
+}
+
+.team-card .contact a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+  
+  
+  /* Contact Icons (Email & LinkedIn) */
+  .contact {
+    margin-top: 15px;
+  }
+  
+  .contact a:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Email Icon */
+  .email-icon {
+    width: 40px;
+    height: 40px;
+    background: url("mail.png") no-repeat center;
+    background-size: cover;
+  }
+  
+  /* LinkedIn Icon */
+  .linkedin-icon {
+    width: 40px;
+    height: 40px;
+    background: url("linkedin.png") no-repeat center;
+    background-size: cover;
+  }
+  
+  /* Responsive Layout for Mobile */
+  @media (max-width: 1200px) {
+    .supervisors {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .members {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .supervisors,
+    .members {
+      grid-template-columns: 1fr;
+    }
+  
+    .team-card img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  /* Contact Us Section */
+  .contact-us {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #001F3F, #003366, #4682B4);
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Website Link Styling */
+  .website-link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .website-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    width: 80%; /* Spanning most of the page width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    max-width: 1200px;
   }
 
   .website-text {
