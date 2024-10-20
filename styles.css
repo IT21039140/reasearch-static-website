@@ -66,7 +66,7 @@ html, body {
 
 .hero {
     /* Set the background image */
-    background-image: url('backgroundImg.jpg'); /* Replace with your image path */
+    background-image: url('Images/backgroundImg.jpg'); /* Replace with your image path */
     
     /* Ensure the background image covers the entire section */
     background-size: cover;
