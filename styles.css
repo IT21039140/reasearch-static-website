@@ -9,7 +9,6 @@ body {
   color: #010101;
 }
 
-
 /* Make the text italic */
 .aspira-text {
   font-style: italic;
@@ -474,6 +473,7 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   margin-bottom: 2%;
+  
 }
 
 .timeline-content:hover {
@@ -579,6 +579,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
+  margin:5%;
 }
 
 .document-card h3 {
@@ -873,12 +874,14 @@ h1 {
     font-weight: bold;
     position: relative;
     padding-top: 20px;
-    text-align: center;//#2980b9
+    text-align: center;
     margin-left: 50px;
   }
 
   .timeline-content {
     padding: 20px;
+    max-width: 90%;
+    margin-left: 15%;
   }
 
   .timeline-item::before {
@@ -1032,7 +1035,7 @@ h1 {
 .team-card img {
   width: 150px; /* Set the width to 150px */
   height: 150px; /* Set the height to 150px to make it square */
- // border-radius: 50%; /* Circular image */
+border-radius: 50%; /* Circular image */
   object-fit: cover; /* Ensure image fits within the square */
   margin-bottom: 20px;
   border: 1px solid #1c0078;
@@ -1216,7 +1219,7 @@ h1 {
   .timeline-content {
     padding: 15px; /* Adjust padding for smaller screens */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow */
-    max-width: 80%;
+    max-width: 90%;
     margin-left: 10%;
   }
 
