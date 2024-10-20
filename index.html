@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resear</title>
+    <title>Aspira</title>
+    <link rel="icon" href="./logInImage.png" type="image/png">
     <link rel="stylesheet" href="styles.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -20,27 +22,48 @@
 
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
   </head>
+
   <body>
+
     <nav class="navbar">
         <div class="logo">
           <img src="logInImage.png" alt="Logo" />
         </div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#researchoverview">Research Overview</a></li>
-            li><a href="#researchoverview">Project Scope</a></li>
-            li><a href="#researchoverview">Milestones</a></li>
-            li><a href="#researchoverview">Downloads</a></li>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#research-overview">Research Overview</a></li>
+          <li><a href="#Methodology">Project Scope</a></li>
+          <li><a href="#milestones">Milestones</a></li>
+          <li><a href="#documents">Downloads</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
         </ul>
-        
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const hamburger = document.getElementById("hamburger-menu");
+          const navLinks = document.querySelector(".nav-links");
+      
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+          });
+        });
+      </script>
+      
+      
       
 
     <section class="hero">
         <div class="hero-text">
+            <h1 class="aspira-text">Aspira</h1>
           <h1>CUTTING-EDGE AI-DRIVEN HIGHER EDUCATIONAL AND CAREER ADVISORY PLATFORM</h1>
         </div>
       </section>
@@ -80,6 +103,7 @@
      
         <div class="content-container">
             <img src="lit.jpg" alt="Relevant Image" class="left-image">
+            
             <div class="text-references">
                
                 <p>
@@ -207,7 +231,7 @@
           <!-- First Content Section-->
           <div class="row align-items-center connecting-lines d-flex">
             <div
-              class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center"
+              class="col-2 text-center full d-inline-flex justify-content-center align-items-center"
             >
               <div class="circle font-weight-bold"><i class="fa fa-star"></i></div>
             </div>
@@ -340,7 +364,7 @@
           </div>
         </div>
 
-        <div class="research-item">
+        <div class="research-item" id="Methodology">
           <h3>Methodology</h3>
           <p>
             This research focuses on developing an AI-based educational assistance platform for Sri Lankan students, addressing challenges in course selection, financial aid guidance, career path recommendations, and mock aptitude test generation. The platform’s course recommendation system utilizes Graph Neural Networks (GNNs) like GraphSAGE, combining student preferences and academic data to recommend university courses. A Retrieval-Augmented Generation (RAG) chatbot offers personalized financial aid advice, leveraging a Pinecone vector database for efficient information retrieval. The career guidance system, designed with Recurrent Neural Networks (RNNs), Collaborative Filtering, and Content-Based Filtering, provides tailored career paths in the IT sector. Additionally, a fine-tuned ChatGPT model generates mock law aptitude test questions using OCR for text extraction. These components work together to support students in making informed academic and career decisions, ensuring relevance, accuracy, and accessibility.
@@ -452,9 +476,9 @@
             <p><strong>Marks Allocated: </strong>6</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 12%"
+                style="width: 12%; background-color:#2980b9 !important"
                 aria-valuenow="12"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -485,9 +509,9 @@
             <p><strong>Marks Allocated: </strong>6</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 50%"
+                style="width: 50%;background-color:#2980b9 !important"
                 aria-valuenow="50"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -518,9 +542,9 @@
             <p><strong>Marks Allocated: </strong>10</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 70%"
+                style="width: 70%;background-color:#2980b9 !important"
                 aria-valuenow="70"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -551,9 +575,9 @@
             <p><strong>Marks Allocated: </strong>18</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 90%"
+                style="width: 90%;background-color:#2980b9 !important"
                 aria-valuenow="90"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -586,9 +610,9 @@
             <p><strong>Marks Allocated: </strong>19</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 100%"
+                style="width: 100%;background-color:#2980b9 !important"
                 aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -620,9 +644,9 @@
             <p><strong>Marks Allocated: </strong>2</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar"
                 role="progressbar"
-                style="width: 100%"
+                style="width: 100%;background-color:#2980b9 !important"
                 aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -653,9 +677,9 @@
             <p><strong>Marks Allocated: </strong>20</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 100%"
+                style="width: 100%;background-color:#2980b9 !important"
                 aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -663,7 +687,7 @@
               <div
                 class="progress-bar bg-success"
                 role="progressbar"
-                style="width: 20%"
+                style="width: 20%;"
                 aria-valuenow="20"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -686,9 +710,9 @@
             <p><strong>Marks Allocated: </strong>3</p>
             <div class="progress">
               <div
-                class="progress-bar bg-infinity-primary"
+                class="progress-bar "
                 role="progressbar"
-                style="width: 100%"
+                style="width: 100%;background-color:#2980b9 !important"
                 aria-valuenow="100"
                 aria-valuemin="0"
                 aria-valuemax="100"
@@ -980,10 +1004,11 @@
           <h3>Contact Details</h3>
           <p>
             For further queries please reach us at
-            <a href="mailto:example@gmail.com">example@gmail.com</a>.
+            <a href="mailto:aspiralanka@gmail.com">aspiralanka@gmail.com</a>.
           </p>
           <p>Hope this project helped you in some manner. Thank you!</p>
-          <p><strong>- Our Team</strong></p>
+          <p><strong>- Team Aspira -RP-125</strong></p>
+          <img class="footer_Logo" src="logInImage.png" width="100%" height="100%">
         </div>
       </div>
     </footer>
